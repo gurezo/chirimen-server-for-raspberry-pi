@@ -4,9 +4,8 @@
   "description": "this is chirimen api server for raspberry pi",
   "main": "src/index.ts",
   "scripts": {
-    "bundle:api": "clear && rm -rf open-api-ts && rm -rf open-api-php && swagger-cli bundle -o ./open-api-yaml-build/open-api.build.yaml -t yaml ./open-api/open-api.yml",
-    "build:open-api:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./open-api-yaml-build/open-api.build.yaml -o ./open-api-ts",
-    "build:open-api:ts:one-file": "openapi-generator-cli -- generate -g typescript-angular -i ./one-file-config/petstore.yml -o ./open-api-ts"
+    "bundle:api": "clear && rm -rf chirimen-api-ts && swagger-cli bundle -o ./chirimen-yaml-build/chirimen.build.yaml -t yaml ./chirimen/chirimen.yml",
+    "build:chirimen:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./chirimen-api-build/chirimen.build.yaml -o ./chirimen-ts"
   },
   "repository": {
     "type": "git",
