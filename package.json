@@ -1,0 +1,22 @@
+{
+  "name": "chirimen-api-server-for-raspberry-pi",
+  "version": "0.0.1",
+  "description": "this is chirimen api server for raspberry pi",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurezo/chirimen-api-server-for-raspberry-pi.git"
+  },
+  "keywords": [
+    "chirimen"
+  ],
+  "author": "lifewood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gurezo/chirimen-api-server-for-raspberry-pi/issues"
+  },
+  "homepage": "https://github.com/gurezo/chirimen-api-server-for-raspberry-pi#readme"
+}
