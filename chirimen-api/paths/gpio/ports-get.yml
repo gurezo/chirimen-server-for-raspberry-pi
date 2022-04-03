@@ -13,7 +13,14 @@ get:
         format: int32
   responses:
     "200":
-  # default:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              uuid: # the unique user id
+                type: string
+                format: uuid # default:
   #   description: unexpected error
   #   content:
   #     application/json:

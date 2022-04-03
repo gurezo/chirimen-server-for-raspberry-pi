@@ -1,4 +1,4 @@
-get:
+post:
   summary: I2C Access
   operationId: i2cAccess
   tags:

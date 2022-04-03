@@ -6,7 +6,7 @@ info:
     name: MIT
 paths:
   /gpio/access:
-    get:
+    post:
       summary: GPIO Access
       operationId: gpioAccess
       tags:
@@ -23,15 +23,23 @@ paths:
       parameters:
         - name: portNumber
           in: query
-          description: How many items to return at one time (max 100)
+          description: port number
           required: false
           schema:
             type: integer
             format: int32
       responses:
-        '200': null
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+                    format: uuid
   /i2c/access:
-    get:
+    post:
       summary: I2C Access
       operationId: i2cAccess
       tags:
@@ -48,8 +56,8 @@ paths:
       parameters:
         - name: portNumber
           in: query
-          description: How many items to return at one time (max 100)
-          required: false
+          description: port number
+          required: true
           schema:
             type: integer
             format: int32
