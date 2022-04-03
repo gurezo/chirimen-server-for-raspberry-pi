@@ -2,9 +2,11 @@
   "name": "chirimen-api-server-for-raspberry-pi",
   "version": "0.0.1",
   "description": "this is chirimen api server for raspberry pi",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle:api": "clear && rm -rf open-api-ts && rm -rf open-api-php && swagger-cli bundle -o ./open-api-yaml-build/open-api.build.yaml -t yaml ./open-api/open-api.yml",
+    "build:open-api:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./open-api-yaml-build/open-api.build.yaml -o ./open-api-ts",
+    "build:open-api:ts:one-file": "openapi-generator-cli -- generate -g typescript-angular -i ./one-file-config/petstore.yml -o ./open-api-ts"
   },
   "repository": {
     "type": "git",
