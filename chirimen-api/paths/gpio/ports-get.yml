@@ -6,20 +6,16 @@ get:
   parameters:
     - name: portNumber
       in: query
-      description: How many items to return at one time (max 100)
+      description: port number
       required: false
       schema:
         type: integer
         format: int32
   responses:
     "200":
-      content:
-        application/json:
-          schema:
-            $ref: ../components/pet/pets.yml
-    default:
-      description: unexpected error
-      content:
-        application/json:
-          schema:
-            $ref: ../components/error/error.yml
+  # default:
+  #   description: unexpected error
+  #   content:
+  #     application/json:
+  #       schema:
+  #         $ref: ../../components/error/error.yml

@@ -1,11 +1,11 @@
 get:
-  summary: GPIO Access
-  operationId: gpioAccess
+  summary: I2C Access
+  operationId: i2cAccess
   tags:
-    - gpio
+    - i2c
   responses:
     "200":
-      description: A GPIO Access
+      description: A I2C Access OK
     # default:
     #   description: unexpected error
     #   content:

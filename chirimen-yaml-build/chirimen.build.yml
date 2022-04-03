@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: chirimen api server for raspberry pi
+  license:
+    name: MIT
+paths:
+  /gpio/access:
+    get:
+      summary: GPIO Access
+      operationId: gpioAccess
+      tags:
+        - gpio
+      responses:
+        '200':
+          description: A GPIO Access
+  /gpio/ports-get:
+    get:
+      summary: GPIO
+      operationId: gpioPortsGet
+      tags:
+        - gpio
+      parameters:
+        - name: portNumber
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200': null
+  /i2c/access:
+    get:
+      summary: I2C Access
+      operationId: i2cAccess
+      tags:
+        - i2c
+      responses:
+        '200':
+          description: A I2C Access OK
+  /i2c/ports-get:
+    get:
+      summary: I2C
+      operationId: i2cPortsGet
+      tags:
+        - i2c
+      parameters:
+        - name: portNumber
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200': null

@@ -4,7 +4,7 @@
   "description": "this is chirimen api server for raspberry pi",
   "main": "src/index.ts",
   "scripts": {
-    "bundle:api": "clear && rm -rf chirimen-api-ts && swagger-cli bundle -o ./chirimen-yaml-build/chirimen.build.yaml -t yaml ./chirimen/chirimen.yml",
+    "bundle:api": "clear && rm -rf chirimen-api-ts && swagger-cli bundle -o ./chirimen-yaml-build/chirimen.build.yml -t yaml ./chirimen-api/chirimen.yml",
     "build:chirimen:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./chirimen-api-build/chirimen.build.yaml -o ./chirimen-ts"
   },
   "repository": {
