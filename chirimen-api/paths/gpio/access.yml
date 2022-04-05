@@ -5,7 +5,8 @@ post:
     - gpio
   responses:
     "200":
-      description: A GPIO Access
+      description: |-
+        200 response
     # default:
     #   description: unexpected error
     #   content:

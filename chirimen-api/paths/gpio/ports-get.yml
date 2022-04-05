@@ -1,5 +1,5 @@
 get:
-  summary: GPIO
+  summary: GPIO Port Get
   operationId: gpioPortsGet
   tags:
     - gpio
@@ -7,22 +7,16 @@ get:
     - name: portNumber
       in: query
       description: port number
-      required: false
+      required: true
       schema:
         type: integer
-        format: int32
   responses:
     "200":
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              uuid: # the unique user id
-                type: string
-                format: uuid # default:
-  #   description: unexpected error
-  #   content:
-  #     application/json:
-  #       schema:
-  #         $ref: ../../components/error/error.yml
+      description: |-
+        200 response
+    # default:
+    #   description: unexpected error
+    #   content:
+    #     application/json:
+    #       schema:
+    #         $ref: ../../components/error/error.yml

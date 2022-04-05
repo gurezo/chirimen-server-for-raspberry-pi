@@ -13,10 +13,26 @@ paths:
         - gpio
       responses:
         '200':
-          description: A GPIO Access
+          description: 200 response
+  /gpio/port-write:
+    post:
+      summary: GPIO Port Write
+      operationId: gpioPortWrite
+      tags:
+        - gpio
+      parameters:
+        - name: writeValue
+          in: query
+          description: write value
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 200 response
   /gpio/ports-get:
     get:
-      summary: GPIO
+      summary: GPIO Port Get
       operationId: gpioPortsGet
       tags:
         - gpio
@@ -24,42 +40,9 @@ paths:
         - name: portNumber
           in: query
           description: port number
-          required: false
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  uuid:
-                    type: string
-                    format: uuid
-  /i2c/access:
-    post:
-      summary: I2C Access
-      operationId: i2cAccess
-      tags:
-        - i2c
-      responses:
-        '200':
-          description: A I2C Access OK
-  /i2c/ports-get:
-    get:
-      summary: I2C
-      operationId: i2cPortsGet
-      tags:
-        - i2c
-      parameters:
-        - name: portNumber
-          in: query
-          description: port number
           required: true
           schema:
             type: integer
-            format: int32
       responses:
-        '200': null
+        '200':
+          description: 200 response

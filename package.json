@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "bundle:api": "clear && rm -rf chirimen-api-ts && swagger-cli bundle -o ./chirimen-yaml-build/chirimen.build.yml -t yaml ./chirimen-api/chirimen.yml",
-    "build:chirimen:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./chirimen-api-build/chirimen.build.yaml -o ./chirimen-ts"
+    "build:chirimen:ts": "openapi-generator-cli -- generate -g typescript-angular -i ./chirimen-yaml-build/chirimen.build.yml -o ./chirimen-ts"
   },
   "repository": {
     "type": "git",
