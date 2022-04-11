@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "start": "node dist/index.ts",
-    "build": "tsc --project tsconfig.json",
-    "bundle:api": "clear && rm -rf chirimen-api-ts && swagger-cli bundle -o ./src/chirimen.build.yml -t yaml ./chirimen-api/chirimen.yml",
-    "build:chirimen:ts": "openapi-generator-cli -- generate -g typescript -i ./src/chirimen.build.yml -o ./src/chirimen-ts"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -30,8 +28,6 @@
     "node-web-gpio": "^1.0.14",
     "node-web-i2c": "^1.1.20",
     "nodemon": "^2.0.15",
-    "openapi-generator": "^0.1.39",
-    "swagger-cli": "^4.0.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   }
