@@ -11,6 +11,8 @@ app.get("/", rootHandler);
 // app.get("/hello/:name", helloHandler);
 
 app.get("/gpio/access", gpioAccessHandler);
+app.get("/gpio/port-write", gpioAccessHandler);
+app.get("/gpio/ports-get", gpioAccessHandler);
 
 app.listen(port, () => {
   return console.log(`Server is listening on ${port}`);

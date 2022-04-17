@@ -14,6 +14,30 @@ const { requestGPIOAccess } = require("node-web-gpio");
 let gpioAccess: GPIOAccess;
 let ports: any;
 
+interface GpioAccessResponse {
+  status: string;
+}
+type GpioAccessBuilder = (name: string) => GpioAccessResponse;
+const gpioAccessBuilder: GpioAccessBuilder = (status: string) => ({ status });
+
+interface GpioPortsGetResponse {
+  status: string;
+}
+
+type GpioPortsGetBuilder = (name: string) => GpioPortsGetResponse;
+const gpioPortsGetBuilder: GpioPortsGetBuilder = (status: string) => ({
+  status,
+});
+
+interface GpioPortWriteResponse {
+  status: string;
+}
+
+type GpioPortWriteBuilder = (name: string) => GpioPortWriteResponse;
+const gpioPortWriteBuilder: GpioPortWriteBuilder = (status: string) => ({
+  status,
+});
+
 export const rootHandler = (_req: Request, res: Response) => {
   return res.send("Hello, Your API is working!!");
 };
@@ -47,9 +71,11 @@ const commonHandler = (func: Function): { status: string; error?: any } => {
 };
 
 export const gpioAccessHandler = async (req: Request, res: Response) => {
-  let response = {};
-  commonHandler(await requestGPIOAccess());
+  const response = gpioAccessBuilder("@@@@ gpioAccessBuilder");
+  return res.json(response);
 
+  // let response = {};
+  // commonHandler(await requestGPIOAccess());
   // try {
   //   gpioAccess = await requestGPIOAccess();
   //   response = okRsponse;
@@ -61,32 +87,36 @@ export const gpioAccessHandler = async (req: Request, res: Response) => {
 };
 
 export const gpioPortsGetHandler = async (req: Request, res: Response) => {
-  const { params } = req;
-  let response = {};
-  // if (!ports) {
-  //   throw new Error("posrt is undefined");
+  const response = gpioPortsGetBuilder("#### gpioPortsGetBuilder");
+  return res.json(response);
+  // const { params } = req;
+  // let response = {};
+  // // if (!ports) {
+  // //   throw new Error("posrt is undefined");
+  // // }
+  // try {
+  //   ports = !ports
+  //     ? customThrower("posrt is undefined")
+  //     : gpioAccess.ports.get(parseInt("26", 10));
+  //   response = okRsponse;
+  // } catch (error) {
+  //   response = errorRsponse(error);
+  // } finally {
+  //   return res.json(response);
   // }
-  try {
-    ports = !ports
-      ? customThrower("posrt is undefined")
-      : gpioAccess.ports.get(parseInt("26", 10));
-    response = okRsponse;
-  } catch (error) {
-    response = errorRsponse(error);
-  } finally {
-    return res.json(response);
-  }
 };
 
-// export const gpioPortWriteHandler = async (req: Request, res: Response) => {
-//   const { params } = req;
-//   let response = {};
-//   try {
-//     port.write(1);
-//     response = okRsponse;
-//   } catch (error) {
-//     response = errorRsponse(error);
-//   } finally {
-//     return res.json(response);
-//   }
-// };
+export const gpioPortWriteHandler = async (req: Request, res: Response) => {
+  const response = gpioPortWriteBuilder("%%%% gpioPortWriteBuilder");
+  return res.json(response);
+  //   const { params } = req;
+  //   let response = {};
+  //   try {
+  //     port.write(1);
+  //     response = okRsponse;
+  //   } catch (error) {
+  //     response = errorRsponse(error);
+  //   } finally {
+  //     return res.json(response);
+  //   }
+};
