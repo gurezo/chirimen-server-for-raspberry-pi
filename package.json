@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.18",
+    "@typespec/compiler": "^1.0.0",
     "express": "^5.1.0",
     "node-web-gpio": "^1.1.17",
     "node-web-i2c": "^1.1.36",
