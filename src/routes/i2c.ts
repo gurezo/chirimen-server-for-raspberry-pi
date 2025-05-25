@@ -3,6 +3,12 @@ import { requestI2CAccess } from 'node-web-i2c';
 
 export const i2cRouter = Router();
 
+// TODO
+/**
+ * port get =>  I2CPortMap
+ *
+ */
+
 // I2Cスキャン: /i2c/scan
 i2cRouter.get('/scan', async (_req: Request, res: Response) => {
   try {

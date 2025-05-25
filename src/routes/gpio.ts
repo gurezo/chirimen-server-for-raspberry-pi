@@ -3,6 +3,24 @@ import { requestGPIOAccess } from 'node-web-gpio';
 
 export const gpioRouter = Router();
 
+// TODO
+/**
+ * port get => GPIOPortMap
+ *
+ * port write => GPIO
+ *
+ * GET /gpio/port => GPIOPortMap
+ *
+ * POST /gpio/port => GPIO
+ *  parameter 書き込みデータ
+ *
+ * POST /gpio/export => GPIO
+ *  parameter
+ *      port (GPIOPortMap)
+ *      direction (in/out)
+ *
+ */
+
 // GPIO制御: /gpio/:pin/:value
 gpioRouter.get('/:pin/:value', async (req: Request, res: Response) => {
   try {
