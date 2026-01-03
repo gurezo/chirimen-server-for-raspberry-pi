@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/gurezo/chirimen-server-for-raspberry-pi#readme",
   "devDependencies": {
-    "@types/express": "^5.0.3",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.6.2",
-    "@typespec/compiler": "^1.4.0",
-    "express": "^5.1.0",
-    "node-web-gpio": "^1.1.30",
-    "node-web-i2c": "^1.1.44",
-    "nodemon": "^3.1.10",
+    "@typespec/compiler": "^1.7.1",
+    "express": "^5.2.1",
+    "node-web-gpio": "^1.1.42",
+    "node-web-i2c": "^1.1.53",
+    "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
